@@ -34,7 +34,7 @@ jobs:
     - name: Build the book
       working-directory: ./notebook
       run: |
-        jupyter-book build .
+        jb build ./
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action

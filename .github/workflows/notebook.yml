@@ -26,11 +26,13 @@ jobs:
         python-version: 3.8
 
     - name: Install dependencies
+      working-directory: ./notebook
       run: |
         pip install -r requirements.txt
 
     # Build the book
     - name: Build the book
+      working-directory: ./notebook
       run: |
         jupyter-book build .
 
@@ -39,4 +41,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/html
+        publish_dir: ./notebook/_build/html

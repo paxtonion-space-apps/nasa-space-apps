@@ -1,7 +1,7 @@
 # Custom gitignore
 datastore/
 datasets/
-
+_build/
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,jupyternotebooks,python

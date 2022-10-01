@@ -34,6 +34,7 @@ jobs:
     - name: Build the book
       working-directory: ./notebook
       run: |
+        jb toc from-project ./ > _toc.yml
         jb build ./
 
     # Push the book's HTML to github-pages

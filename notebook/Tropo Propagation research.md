@@ -1,3 +1,5 @@
+# Initial Research
+
 Types of tropospheric propagtion:
 1. Enhanced Tropospheric Refraction (50MHz to 432MHz),
 	occurs when there is a significant increase above the normal

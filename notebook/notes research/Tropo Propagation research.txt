@@ -1,0 +1,48 @@
+Types of tropospheric propagtion:
+1. Enhanced Tropospheric Refraction (50MHz to 432MHz),
+	occurs when there is a significant increase above the normal
+	value of refractive index in the atmosphere
+when the lower troposphere divides into 2 stable layers, warm dry air
+over cool moist air.
+boundary between the layers is called inversion
+temp decreases with height and humidity increases with height
+signals 'bend' (refract) when they cross the inversion
+
+2. Tropospheric Ducting (144MHz to 432 MHz),
+	occurs when radio waves are trapped within channels bounded by
+	sharp changes in refractive index
+surface ducts - signals get trapped in the surface layer (between 
+		ground and inversion) as the refractive bending 
+		increases so much that the signal hits the ground
+		far away from the TX, then reflects back to inversion,
+		hence 'trapped'.
+		Occurs when a steep negative gradient in R.I. forms
+		immediately above the ground
+elevated ducts - form when there is a double discontinuity in R.I., upper
+		temp inversion and lower temp. waves reflected upwards by
+		the lower boundary of duct and down by upper boundary.
+		Waves guided over irregular terrain until broken by mountains
+		
+3. Tropospheric Scattering (50MHz to 432MHz),
+	arrises from small-scale variations in the refractive index
+brings in distant fluttery signals from beyond normal line of sight.
+changes in R.I. occur when there is turbulence, e.g. in convection cells or
+strong wind.
+
+
+
+Caused by high levels of water vapour and air density...
+	air density - mass of air per unit volume
+
+in lower troposphere, differences in water vapour content dominate R.I.
+changes
+in higher, temp variations are dominant factor, and changes in R.I. decreases,
+	-refractive index decreases with height... exponential equation?
+
+refractive index depends on air temp and dew point
+
+temp, pressure and water vapour is different everywhere :/
+
+day ground is hot, evening ground cools. ducts develop progressively through
+lifetime of an anticyclone so biggest openings occur after several days of
+enhanced propagation

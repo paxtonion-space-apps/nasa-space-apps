@@ -36,6 +36,7 @@ jobs:
       run: |
         jb toc from-project ./ > _toc.yml
         jb build ./
+        cp ./CNAME ./_build/html/CNAME
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action

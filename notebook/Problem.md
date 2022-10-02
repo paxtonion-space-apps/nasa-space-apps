@@ -18,13 +18,13 @@ Types of tropospheric propagtion:
 ## Tropospheric Scattering (50MHz to 432MHz)
 Arises from small-scale variations in the refractive index brings in distant fluttery signals from beyond normal line of sight. Changes in R.I. occur when there is turbulence, e.g. in convection cells or strong wind.
 
-Caused by high levels of water vapour and air density... 
 
-## Air density 
-- mass of air per unit volume in lower troposphere, differences in water vapour content dominate R.I. changes in higher, temp variations are dominant factor, and changes in R.I. decreases, 
+- caused by high levels of water vapour and air density... 
 
-refractive index decreases with height... exponential equation? 
+- mass of air per unit volume in lower troposphere, differences in water vapour content dominate R.I. changes in higher, temp variations are dominant factor, and changes in R.I. decreases 
+
+- refractive index decreases with height... exponential equation? 
 Refractive index depends on air temp and dew point
 Temp, pressure and water vapour is different everywhere :/
 
-Day ground is hot, evening ground cools. ducts develop progressively through lifetime of an anticyclone so biggest openings occur after several days of enhanced propagation
+- day ground is hot, evening ground cools. ducts develop progressively through lifetime of an anticyclone so biggest openings occur after several days of enhanced propagation

@@ -2,6 +2,7 @@
 _build/
 temp/
 output/
+datasets/
 .DS_Store
 
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,jupyternotebooks,python

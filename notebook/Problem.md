@@ -1,6 +1,7 @@
 # Initial Research
 
 Types of tropospheric propagtion:
+
 ## Enhanced Tropospheric Refraction (50MHz to 432MHz)
 
 - Occurs when there is a significant increase above the normal value of refractive index in the atmosphere e.g. when the lower troposphere divides into 2 stable layers, warm dry air over cool moist air.

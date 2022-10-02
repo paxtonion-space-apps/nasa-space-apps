@@ -6,11 +6,11 @@
 #
 #    With embedded urls: ( download the hardcoded list of files in the 'files =' block below)
 #
-#       python ./download-all-2022-06-01_00-05-00.py
+#       python ./download-all-2022-05-31_23-39-28.py
 #
 #    Download all files in a Metalink/CSV: (downloaded from ASF Vertex)
 #
-#       python ./download-all-2022-06-01_00-05-00.py /path/to/downloads.metalink localmetalink.metalink localcsv.csv
+#       python ./download-all-2022-05-31_23-39-28.py /path/to/downloads.metalink localmetalink.metalink localcsv.csv
 #
 #    Compatibility: python >= 2.6.5, 2.7.5, 3.0
 #
@@ -76,11 +76,51 @@ def signal_handler(sig, frame):
 class bulk_downloader:
     def __init__(self):
         # List of files to download
-        self.files = [ "https://grfn.asf.alaska.edu/door/download/S1-GUNW-D-R-087-tops-20180505_20180423-161538-20479N_18471N-PP-7187-v2_0_1.nc",
-                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-087-tops-20180505_20180423-161538-20479N_18471N-PP-7187-v2_0_1.nc&layer=science/grids/data/unwrappedPhase",
-                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-087-tops-20180505_20180423-161538-20479N_18471N-PP-7187-v2_0_1.nc&layer=science/grids/data/connectedComponents",
-                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-087-tops-20180505_20180423-161538-20479N_18471N-PP-7187-v2_0_1.nc&layer=science/grids/data/coherence",
-                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-087-tops-20180505_20180423-161538-20479N_18471N-PP-7187-v2_0_1.nc&layer=science/grids/data/amplitude" ]
+        self.files = [ "https://grfn.asf.alaska.edu/door/download/S1-GUNW-D-R-071-tops-20190728_20180627-135213-36450N_34472N-PP-a1ea-v2_0_2.nc",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20180627-135213-36450N_34472N-PP-a1ea-v2_0_2.nc&layer=science/grids/data/unwrappedPhase",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20180627-135213-36450N_34472N-PP-a1ea-v2_0_2.nc&layer=science/grids/data/connectedComponents",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20180627-135213-36450N_34472N-PP-a1ea-v2_0_2.nc&layer=science/grids/data/coherence",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20180627-135213-36450N_34472N-PP-a1ea-v2_0_2.nc&layer=science/grids/data/amplitude",
+                       "https://grfn.asf.alaska.edu/door/download/S1-GUNW-D-R-071-tops-20190728_20190622-135213-36450N_34472N-PP-b4b2-v2_0_2.nc",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20190622-135213-36450N_34472N-PP-b4b2-v2_0_2.nc&layer=science/grids/data/unwrappedPhase",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20190622-135213-36450N_34472N-PP-b4b2-v2_0_2.nc&layer=science/grids/data/connectedComponents",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20190622-135213-36450N_34472N-PP-b4b2-v2_0_2.nc&layer=science/grids/data/coherence",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20190622-135213-36450N_34472N-PP-b4b2-v2_0_2.nc&layer=science/grids/data/amplitude",
+                       "https://grfn.asf.alaska.edu/door/download/S1-GUNW-D-R-071-tops-20190728_20190704-135213-36450N_34472N-PP-9181-v2_0_2.nc",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20190704-135213-36450N_34472N-PP-9181-v2_0_2.nc&layer=science/grids/data/unwrappedPhase",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20190704-135213-36450N_34472N-PP-9181-v2_0_2.nc&layer=science/grids/data/connectedComponents",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20190704-135213-36450N_34472N-PP-9181-v2_0_2.nc&layer=science/grids/data/coherence",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20190704-135213-36450N_34472N-PP-9181-v2_0_2.nc&layer=science/grids/data/amplitude",
+                       "https://grfn.asf.alaska.edu/door/download/S1-GUNW-D-R-071-tops-20190728_20180826-135212-00119W_00034N-PP-2d1f-v2_0_5.nc",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20180826-135212-00119W_00034N-PP-2d1f-v2_0_5.nc&layer=science/grids/data/unwrappedPhase",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20180826-135212-00119W_00034N-PP-2d1f-v2_0_5.nc&layer=science/grids/data/connectedComponents",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20180826-135212-00119W_00034N-PP-2d1f-v2_0_5.nc&layer=science/grids/data/coherence",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190728_20180826-135212-00119W_00034N-PP-2d1f-v2_0_5.nc&layer=science/grids/data/amplitude",
+                       "https://grfn.asf.alaska.edu/door/download/S1-GUNW-D-R-071-tops-20190716_20180627-135212-36450N_34472N-PP-b69d-v2_0_2.nc",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20180627-135212-36450N_34472N-PP-b69d-v2_0_2.nc&layer=science/grids/data/unwrappedPhase",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20180627-135212-36450N_34472N-PP-b69d-v2_0_2.nc&layer=science/grids/data/connectedComponents",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20180627-135212-36450N_34472N-PP-b69d-v2_0_2.nc&layer=science/grids/data/coherence",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20180627-135212-36450N_34472N-PP-b69d-v2_0_2.nc&layer=science/grids/data/amplitude",
+                       "https://grfn.asf.alaska.edu/door/download/S1-GUNW-D-R-071-tops-20190716_20190610-135212-36450N_34472N-PP-f29b-v2_0_2.nc",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190610-135212-36450N_34472N-PP-f29b-v2_0_2.nc&layer=science/grids/data/unwrappedPhase",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190610-135212-36450N_34472N-PP-f29b-v2_0_2.nc&layer=science/grids/data/connectedComponents",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190610-135212-36450N_34472N-PP-f29b-v2_0_2.nc&layer=science/grids/data/coherence",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190610-135212-36450N_34472N-PP-f29b-v2_0_2.nc&layer=science/grids/data/amplitude",
+                       "https://grfn.asf.alaska.edu/door/download/S1-GUNW-D-R-071-tops-20190716_20190622-135212-36450N_34472N-PP-7915-v2_0_2.nc",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190622-135212-36450N_34472N-PP-7915-v2_0_2.nc&layer=science/grids/data/unwrappedPhase",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190622-135212-36450N_34472N-PP-7915-v2_0_2.nc&layer=science/grids/data/connectedComponents",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190622-135212-36450N_34472N-PP-7915-v2_0_2.nc&layer=science/grids/data/coherence",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190622-135212-36450N_34472N-PP-7915-v2_0_2.nc&layer=science/grids/data/amplitude",
+                       "https://grfn.asf.alaska.edu/door/download/S1-GUNW-D-R-071-tops-20190716_20190704-135212-36450N_34472N-PP-bf9f-v2_0_2.nc",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190704-135212-36450N_34472N-PP-bf9f-v2_0_2.nc&layer=science/grids/data/unwrappedPhase",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190704-135212-36450N_34472N-PP-bf9f-v2_0_2.nc&layer=science/grids/data/connectedComponents",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190704-135212-36450N_34472N-PP-bf9f-v2_0_2.nc&layer=science/grids/data/coherence",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20190704-135212-36450N_34472N-PP-bf9f-v2_0_2.nc&layer=science/grids/data/amplitude",
+                       "https://grfn.asf.alaska.edu/door/download/S1-GUNW-D-R-071-tops-20190716_20180814-135212-00119W_00034N-PP-3114-v2_0_5.nc",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20180814-135212-00119W_00034N-PP-3114-v2_0_5.nc&layer=science/grids/data/unwrappedPhase",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20180814-135212-00119W_00034N-PP-3114-v2_0_5.nc&layer=science/grids/data/connectedComponents",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20180814-135212-00119W_00034N-PP-3114-v2_0_5.nc&layer=science/grids/data/coherence",
+                       "https://services.asf.alaska.edu/geospatial/reformat?product=S1-GUNW-D-R-071-tops-20190716_20180814-135212-00119W_00034N-PP-3114-v2_0_5.nc&layer=science/grids/data/amplitude" ]
 
         # Local stash of cookies so we don't always have to ask
         self.cookie_jar_path = os.path.join( os.path.expanduser('~'), ".bulk_download_cookiejar.txt")
@@ -594,11 +634,13 @@ class bulk_downloader:
            print ("  Average Rate: {0:.2f}MB/sec".format( (self.total_bytes/1024.0**2)/self.total_time))
         print ("--------------------------------------------------------------------------------")
 
-
-if __name__ == "__main__":
-    # Setup a signal trap for SIGINT (Ctrl+C)
+def download():
+   # Setup a signal trap for SIGINT (Ctrl+C)
     signal.signal(signal.SIGINT, signal_handler)
 
     downloader = bulk_downloader()
     downloader.download_files()
     downloader.print_summary()
+
+if __name__ == "__main__":
+    download()

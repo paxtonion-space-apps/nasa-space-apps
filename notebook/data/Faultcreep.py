@@ -634,11 +634,13 @@ class bulk_downloader:
            print ("  Average Rate: {0:.2f}MB/sec".format( (self.total_bytes/1024.0**2)/self.total_time))
         print ("--------------------------------------------------------------------------------")
 
-
-if __name__ == "__main__":
-    # Setup a signal trap for SIGINT (Ctrl+C)
+def download():
+   # Setup a signal trap for SIGINT (Ctrl+C)
     signal.signal(signal.SIGINT, signal_handler)
 
     downloader = bulk_downloader()
     downloader.download_files()
     downloader.print_summary()
+
+if __name__ == "__main__":
+    download()

@@ -1,5 +1,7 @@
 # NASA Space Apps Challenge
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sam-innes/nasa-space-apps/HEAD?labpath=%2Fnotebook)
+
 JupyterLab notebook for recording progress during the NASA space apps challenge.
 
 INSAR Detectives! -- by the Space Invaders 👽
